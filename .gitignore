@@ -1,0 +1,20 @@
+# Dependencies — platform-specific native binaries (rollup 4) make this
+# directory non-portable across OSes. Never commit it.
+node_modules/
+
+# Build tooling caches
+.rollup.cache/
+.eslintcache
+
+# Logs
+npm-debug.log*
+yarn-error.log*
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+*.swp
+
+# Local scratch / diagnostic scripts
+_*.mjs
+_*.sh
