@@ -1764,12 +1764,12 @@ class RmRecipeDetail extends LitElement {
   _renderEditPanel() {
     const d = this._editData;
     return html`
-      <div class="edit-overlay" @click=${(e) => { if (e.target === e.currentTarget) this._cancelEdit(); }}>
-        <div class="edit-panel">
-          <div class="edit-header">
-            <span>${msg('Edit Recipe')}</span>
-            <button class="icon-btn" @click=${this._cancelEdit}><ha-icon icon="mdi:close"></ha-icon></button>
-          </div>
+      <ha-adaptive-dialog
+        .open=${true}
+        .headerTitle=${msg('Edit Recipe')}
+        width="large"
+        @closed=${this._cancelEdit}
+      >
           <div class="edit-body">
 
             ${this._renderField(msg('Name'), 'name', 'text')}
@@ -2012,7 +2012,7 @@ class RmRecipeDetail extends LitElement {
             </div>
 
           </div>
-          <div class="edit-footer">
+          <div slot="footer" class="edit-footer">
             <button class="action-btn danger-outline" @click=${this._handleDeleteRecipe}
               title="${this._confirmDelete ? msg('Click again to confirm delete') : msg('Delete recipe')}">
               <ha-icon icon="${this._confirmDelete ? 'mdi:alert' : 'mdi:trash-can-outline'}"></ha-icon>
@@ -2023,8 +2023,7 @@ class RmRecipeDetail extends LitElement {
               <button class="action-btn primary" @click=${this._saveEdit}>${msg('Save')}</button>
             </div>
           </div>
-        </div>
-      </div>
+      </ha-adaptive-dialog>
     `;
   }
 
@@ -2751,38 +2750,14 @@ class RmRecipeDetail extends LitElement {
       display: flex; align-items: center; justify-content: center; padding: 0;
     }
 
-    /* Edit overlay */
-    .edit-overlay {
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.6);
-      display: flex;
-      align-items: flex-end;
-      z-index: 10;
-    }
-    .edit-panel {
-      background: var(--rm-bg-surface, #1c1c1e);
-      border-radius: var(--rm-radius, 12px) var(--rm-radius, 12px) 0 0;
-      width: 100%;
-      max-height: 82vh;
-      display: flex;
-      flex-direction: column;
-    }
-    .edit-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 14px 16px;
-      border-bottom: 1px solid var(--rm-border, rgba(255,255,255,0.08));
-      font-weight: 600;
-      font-size: 16px;
-      color: var(--rm-text, #e5e5ea);
-      flex-shrink: 0;
+    /* Edit dialog (ha-adaptive-dialog) */
+    ha-adaptive-dialog {
+      --ha-dialog-surface-background: var(--rm-bg-surface, #1c1c1e);
+      --ha-bottom-sheet-surface-background: var(--rm-bg-surface, #1c1c1e);
+      --dialog-content-padding: 16px;
+      --ha-dialog-border-radius: var(--rm-radius, 12px);
     }
     .edit-body {
-      flex: 1;
-      overflow-y: auto;
-      padding: 16px;
       display: flex;
       flex-direction: column;
       gap: 12px;
