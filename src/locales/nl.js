@@ -127,7 +127,6 @@
 's5528782ffc9377fd': `Alarm (3 piepjes)`,
 's559ac27231799e90': `Bevestigen?`,
 's56651b5d1f3a6d47': `Of plak afbeeldings-URL`,
-'s56977f744c2a783d': `Volgt het Home Assistant-thema`,
 's5732264e04967b7c': `Porties`,
 's57ed4d0e053c4318': `Donkere modus`,
 's589641982079b4d6': `Deze week wissen`,
@@ -361,5 +360,8 @@
 'sfb75e276e558684f': `Scherm wakker houden`,
 'sfdc8508b5a2d671f': str`met${0}foto${1}`,
 'sfdca302f59a1ecfe': `Koolhydraten (g)`,
+'s3b0ab4b52326316f': `Light`,
+'sdb73788b3c975f16': `Auto`,
+'sac895c732f350ac5': `Dark`,
     };
   

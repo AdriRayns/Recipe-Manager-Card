@@ -127,7 +127,6 @@
 's5528782ffc9377fd': `Allarme (3 bip)`,
 's559ac27231799e90': `Confermare?`,
 's56651b5d1f3a6d47': `Oppure incolla URL immagine`,
-'s56977f744c2a783d': `Segue il tema di Home Assistant`,
 's5732264e04967b7c': `Porzioni`,
 's57ed4d0e053c4318': `Modalità scura`,
 's589641982079b4d6': `Svuota questa settimana`,
@@ -361,5 +360,8 @@
 'sfb75e276e558684f': `Mantieni schermo attivo`,
 'sfdc8508b5a2d671f': str`con${0}foto${1}`,
 'sfdca302f59a1ecfe': `Carboidrati (g)`,
+'s3b0ab4b52326316f': `Light`,
+'sdb73788b3c975f16': `Auto`,
+'sac895c732f350ac5': `Dark`,
     };
   

@@ -170,10 +170,22 @@ class RmSettingsView extends LitElement {
           </select>
         </div>
 
-        <div class="setting-row muted-row">
-          <span class="setting-name">${msg('Dark mode')}</span>
-          <span class="muted-note">${alwaysDark ? msg('Always dark for this theme') : alwaysLight ? msg('Always light for this theme') : msg('Follows Home Assistant theme')}</span>
-        </div>
+        ${noToggle ? html`
+          <div class="setting-row muted-row">
+            <span class="setting-name">${msg('Dark mode')}</span>
+            <span class="muted-note">${alwaysDark ? msg('Always dark for this theme') : msg('Always light for this theme')}</span>
+          </div>
+        ` : html`
+          <div class="setting-row">
+            <span class="setting-name">${msg('Dark mode')}</span>
+            <div class="btn-group">
+              ${[['off', msg('Light')], ['system', msg('Auto')], ['on', msg('Dark')]].map(([val, lbl]) => html`
+                <button class="seg-btn ${s.darkMode === val ? 'active' : ''}"
+                  @click=${() => this._update({ darkMode: val })}>${lbl}</button>
+              `)}
+            </div>
+          </div>
+        `}
 
         <div class="setting-row">
           <span class="setting-name">${msg('Text size')}</span>

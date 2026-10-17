@@ -127,7 +127,6 @@
 's5528782ffc9377fd': `Alarme (3 bips)`,
 's559ac27231799e90': `Confirmer ?`,
 's56651b5d1f3a6d47': `Ou collez l'URL de l'image`,
-'s56977f744c2a783d': `Suit le thème de Home Assistant`,
 's5732264e04967b7c': `Portions`,
 's57ed4d0e053c4318': `Mode sombre`,
 's589641982079b4d6': `Vider cette semaine`,
@@ -361,5 +360,8 @@
 'sfb75e276e558684f': `Garder l'écran allumé`,
 'sfdc8508b5a2d671f': str`avec${0}photo${1}`,
 'sfdca302f59a1ecfe': `Glucides (g)`,
+'s3b0ab4b52326316f': `Light`,
+'sdb73788b3c975f16': `Auto`,
+'sac895c732f350ac5': `Dark`,
     };
   

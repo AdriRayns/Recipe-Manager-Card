@@ -1058,9 +1058,14 @@
 <trans-unit id="sfb75e276e558684f">
   <source>Keep screen awake</source>
 <target>Scherm wakker houden</target></trans-unit>
-<trans-unit id="s56977f744c2a783d">
-  <source>Follows Home Assistant theme</source>
-  <target>Volgt het Home Assistant-thema</target>
+<trans-unit id="s3b0ab4b52326316f">
+  <source>Light</source>
+</trans-unit>
+<trans-unit id="sdb73788b3c975f16">
+  <source>Auto</source>
+</trans-unit>
+<trans-unit id="sac895c732f350ac5">
+  <source>Dark</source>
 </trans-unit>
 </body>
 </file>

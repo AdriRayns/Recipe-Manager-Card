@@ -475,9 +475,11 @@ class RecipeManagerCard extends LitElement {
     const alwaysLight = !themeVars.dark;
     let isDark = alwaysDark;
     if (!alwaysDark && !alwaysLight) {
-      // Follow the active Home Assistant theme; fall back to the OS
-      // preference until `hass` is attached on the very first render.
-      isDark = this.hass?.themes?.darkMode ?? (this._darkModeQuery?.matches ?? false);
+      if (s.darkMode === 'on') isDark = true;
+      else if (s.darkMode === 'off') isDark = false;
+      // 'system' (Auto) follows the active Home Assistant theme; falls back
+      // to the OS preference until `hass` is attached on the first render.
+      else isDark = this.hass?.themes?.darkMode ?? (this._darkModeQuery?.matches ?? false);
     } else if (alwaysLight) {
       isDark = false;
     }

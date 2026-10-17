@@ -127,7 +127,6 @@
 's5528782ffc9377fd': `Alarm (3 Töne)`,
 's559ac27231799e90': `Bestätigen?`,
 's56651b5d1f3a6d47': `Oder Bild-URL einfügen`,
-'s56977f744c2a783d': `Folgt dem Home Assistant-Theme`,
 's5732264e04967b7c': `Portionen`,
 's57ed4d0e053c4318': `Dunkelmodus`,
 's589641982079b4d6': `Diese Woche leeren`,
@@ -361,5 +360,8 @@
 'sfb75e276e558684f': `Bildschirm wach halten`,
 'sfdc8508b5a2d671f': str`mit${0}Foto${1}`,
 'sfdca302f59a1ecfe': `Kohlenhydrate (g)`,
+'s3b0ab4b52326316f': `Light`,
+'sdb73788b3c975f16': `Auto`,
+'sac895c732f350ac5': `Dark`,
     };
   

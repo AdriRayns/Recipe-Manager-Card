@@ -127,7 +127,6 @@
 's5528782ffc9377fd': `Alarme (3 bipes)`,
 's559ac27231799e90': `Confirmar?`,
 's56651b5d1f3a6d47': `Ou colar URL da imagem`,
-'s56977f744c2a783d': `Segue o tema do Home Assistant`,
 's5732264e04967b7c': `Doses`,
 's57ed4d0e053c4318': `Modo escuro`,
 's589641982079b4d6': `Limpar esta semana`,
@@ -361,5 +360,8 @@
 'sfb75e276e558684f': `Manter ecrã ativo`,
 'sfdc8508b5a2d671f': str`com${0}foto${1}`,
 'sfdca302f59a1ecfe': `Hidratos de Carbono (g)`,
+'s3b0ab4b52326316f': `Light`,
+'sdb73788b3c975f16': `Auto`,
+'sac895c732f350ac5': `Dark`,
     };
   
