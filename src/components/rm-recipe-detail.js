@@ -158,6 +158,8 @@ class RmRecipeDetail extends LitElement {
     _tagPickerInput:      { type: String },
     // Inline ingredient editing
     _editIngEdit:         { type: Object },
+    // Inline step editing
+    _editStepEdit:        { type: Object },
   };
 
   constructor() {
@@ -201,6 +203,7 @@ class RmRecipeDetail extends LitElement {
     this._tagPickerField = null;
     this._tagPickerInput = '';
     this._editIngEdit = null;
+    this._editStepEdit = null;
     this._slideTimer = null;
     this._slideTouchStartX = null;
     this._wakeLockTimeout = null;
@@ -436,6 +439,27 @@ class RmRecipeDetail extends LitElement {
 
   _cancelEditIngredient() {
     this._editIngEdit = null;
+  }
+
+  // -- Inline step editing ------------------------------------------------------
+
+  _startEditStep(idx) {
+    const steps = this._editData.instructions || [];
+    if (steps[idx] === undefined) return;
+    this._editStepEdit = { idx, text: steps[idx] };
+  }
+
+  _saveEditStep() {
+    const e = this._editStepEdit;
+    if (!e) return;
+    const steps = [...(this._editData.instructions || [])];
+    steps[e.idx] = e.text;
+    this._editData = { ...this._editData, instructions: steps };
+    this._editStepEdit = null;
+  }
+
+  _cancelEditStep() {
+    this._editStepEdit = null;
   }
 
   _editAddIngredient() {
@@ -1910,7 +1934,30 @@ class RmRecipeDetail extends LitElement {
                     @dragend=${() => { this._dragStepOver = -1; this._dragStepFrom = -1; }}
                   >
                     <ha-icon icon="mdi:drag-vertical" class="drag-handle"></ha-icon>
-                    <span class="edit-ing-text">${step}</span>
+                    ${this._editStepEdit && this._editStepEdit.idx === i ? html`
+                      <div class="edit-step-inline">
+                        <textarea
+                          class="edit-step-textarea"
+                          rows="3"
+                          .value=${this._editStepEdit.text}
+                          @input=${e => { this._editStepEdit = { ...this._editStepEdit, text: e.target.value }; }}
+                          @keydown=${e => {
+                            if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) { e.preventDefault(); this._saveEditStep(); }
+                            if (e.key === 'Escape') this._cancelEditStep();
+                          }}
+                        ></textarea>
+                        <div class="edit-step-btns">
+                          <button class="ing-inline-save" @click=${this._saveEditStep} title="${msg('Save')}">
+                            <ha-icon icon="mdi:check"></ha-icon>
+                          </button>
+                          <button class="ing-inline-cancel" @click=${this._cancelEditStep} title="${msg('Cancel')}">
+                            <ha-icon icon="mdi:close"></ha-icon>
+                          </button>
+                        </div>
+                      </div>
+                    ` : html`
+                      <span class="edit-ing-text" @click=${() => this._startEditStep(i)} title="${msg('Click to edit')}">${step}</span>
+                    `}
                     <div class="edit-reorder-btns">
                       <button class="edit-move-btn" ?disabled=${i === 0} @click=${() => this._editMoveStep(i, -1)} title="${msg('Move up')}">
                         <ha-icon icon="mdi:chevron-up"></ha-icon>
@@ -3174,6 +3221,21 @@ class RmRecipeDetail extends LitElement {
     .ing-inline-save { border-color: var(--rm-accent); color: var(--rm-accent); }
     .ing-inline-save:hover { background: var(--rm-accent); color: #fff; }
     .ing-inline-save ha-icon, .ing-inline-cancel ha-icon { --mdc-icon-size: 13px; }
+
+    /* ── Inline step edit ──────────────────────────────── */
+    .edit-step-inline {
+      display: flex; align-items: flex-start; gap: 6px; flex: 1; min-width: 0;
+    }
+    .edit-step-textarea {
+      flex: 1; min-width: 0; min-height: 56px; resize: vertical;
+      background: var(--rm-bg-elevated); border: 1px solid var(--rm-accent);
+      border-radius: 6px; color: var(--rm-text); padding: 6px 8px;
+      font-size: 13px; font-family: inherit; line-height: 1.4;
+    }
+    .edit-step-textarea:focus { outline: none; }
+    .edit-step-btns {
+      display: flex; flex-direction: column; gap: 4px; flex-shrink: 0;
+    }
 
   `;
 }
