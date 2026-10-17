@@ -2044,7 +2044,7 @@ class RecipeManagerCard extends LitElement {
       display: flex; gap: 4px; flex-wrap: wrap; justify-content: center;
     }
     .preset-arc-btn {
-      background: var(--rm-bg); border: 1px solid var(--rm-border);
+      background: var(--rm-bg-main); border: 1px solid var(--rm-border);
       border-radius: 10px; padding: 2px 6px; font-size: 10px;
       color: var(--rm-text-secondary); cursor: pointer; transition: all 0.15s;
     }

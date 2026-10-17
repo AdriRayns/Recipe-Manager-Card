@@ -440,7 +440,7 @@ class RmMealPlanner extends LitElement {
     }
     .meal-cell {
       min-height: 48px;
-      background: var(--rm-surface, #2c2c2e);
+      background: var(--rm-bg-surface, #2c2c2e);
       border-radius: 6px;
       padding: 3px;
       display: flex;
@@ -594,7 +594,7 @@ class RmMealPlanner extends LitElement {
     .picker-label { font-size: 13px; color: var(--rm-text-secondary, #8e8e93); }
     .servings-ctrl { display: flex; align-items: center; gap: 8px; }
     .scaler-btn {
-      background: var(--rm-surface, #2c2c2e);
+      background: var(--rm-bg-surface, #2c2c2e);
       border: 1px solid var(--rm-border, rgba(255,255,255,0.08));
       border-radius: 50%;
       width: 26px; height: 26px; cursor: pointer;
@@ -639,7 +639,7 @@ class RmMealPlanner extends LitElement {
       border-bottom: 1px solid var(--rm-border, rgba(255,255,255,0.05));
       transition: background 0.12s;
     }
-    .picker-item:hover { background: var(--rm-surface, #2c2c2e); }
+    .picker-item:hover { background: var(--rm-bg-surface, #2c2c2e); }
     .picker-thumb {
       width: 44px;
       height: 44px;
@@ -648,7 +648,7 @@ class RmMealPlanner extends LitElement {
       flex-shrink: 0;
     }
     .picker-placeholder {
-      background: var(--rm-surface, #2c2c2e);
+      background: var(--rm-bg-surface, #2c2c2e);
       display: flex;
       align-items: center;
       justify-content: center;

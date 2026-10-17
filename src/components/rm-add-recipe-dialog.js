@@ -759,7 +759,7 @@ class RmAddRecipeDialog extends LitElement {
     .mode-toggle {
       display: flex;
       gap: 4px;
-      background: var(--rm-surface, #2c2c2e);
+      background: var(--rm-bg-surface, #2c2c2e);
       border-radius: 8px;
       padding: 3px;
     }
@@ -802,7 +802,7 @@ class RmAddRecipeDialog extends LitElement {
       gap: 8px;
       font-size: 13px;
       color: var(--rm-text-secondary, #8e8e93);
-      background: var(--rm-surface, #2c2c2e);
+      background: var(--rm-bg-surface, #2c2c2e);
       border-radius: 8px;
       padding: 10px 12px;
     }
@@ -810,7 +810,7 @@ class RmAddRecipeDialog extends LitElement {
     .url-row { display: flex; gap: 8px; }
     .url-input {
       flex: 1;
-      background: var(--rm-surface, #2c2c2e);
+      background: var(--rm-bg-surface, #2c2c2e);
       border: 1px solid var(--rm-border, rgba(255,255,255,0.12));
       border-radius: 8px;
       color: var(--rm-text, #e5e5ea);
@@ -838,7 +838,7 @@ class RmAddRecipeDialog extends LitElement {
       color: var(--rm-text-secondary, #8e8e93);
     }
     .field input, .field textarea {
-      background: var(--rm-surface, #2c2c2e);
+      background: var(--rm-bg-surface, #2c2c2e);
       border: 1px solid var(--rm-border, rgba(255,255,255,0.12));
       border-radius: 8px;
       color: var(--rm-text, #e5e5ea);
@@ -920,7 +920,7 @@ class RmAddRecipeDialog extends LitElement {
     .add-row { display: flex; gap: 8px; align-items: flex-end; }
     .add-row input, .add-row textarea {
       flex: 1;
-      background: var(--rm-surface, #2c2c2e);
+      background: var(--rm-bg-surface, #2c2c2e);
       border: 1px solid var(--rm-border, rgba(255,255,255,0.12));
       border-radius: 8px;
       color: var(--rm-text, #e5e5ea);
@@ -933,7 +933,7 @@ class RmAddRecipeDialog extends LitElement {
 
     /* Buttons */
     .action-btn {
-      background: var(--rm-surface, #2c2c2e);
+      background: var(--rm-bg-surface, #2c2c2e);
       border: 1px solid var(--rm-border, rgba(255,255,255,0.12));
       border-radius: 8px;
       color: var(--rm-text, #e5e5ea);
@@ -957,7 +957,7 @@ class RmAddRecipeDialog extends LitElement {
     .import-info {
       display: flex;
       gap: 12px;
-      background: var(--rm-surface, #2c2c2e);
+      background: var(--rm-bg-surface, #2c2c2e);
       border-radius: 10px;
       padding: 12px 14px;
       font-size: 13px;
@@ -977,7 +977,7 @@ class RmAddRecipeDialog extends LitElement {
       display: flex;
       align-items: center;
       gap: 10px;
-      background: var(--rm-surface, #2c2c2e);
+      background: var(--rm-bg-surface, #2c2c2e);
       border: 2px dashed var(--rm-border, rgba(255,255,255,0.15));
       border-radius: 10px;
       padding: 16px 14px;

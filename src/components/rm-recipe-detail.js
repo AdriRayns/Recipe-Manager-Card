@@ -2148,7 +2148,7 @@ class RmRecipeDetail extends LitElement {
     .chips-area { display: flex; flex-direction: column; gap: 5px; }
     .chip-group-row { display: flex; flex-wrap: wrap; gap: 5px; align-items: center; }
     .chip-label {
-      background: var(--rm-bg); border: 1px solid var(--rm-border);
+      background: var(--rm-bg-main); border: 1px solid var(--rm-border);
       color: var(--rm-text-secondary); font-weight: 600; cursor: default;
     }
 
@@ -2157,7 +2157,7 @@ class RmRecipeDetail extends LitElement {
       flex-shrink: 0;
       height: 180px;
       position: relative;
-      background: var(--rm-surface, #2c2c2e);
+      background: var(--rm-bg-surface, #2c2c2e);
       overflow: hidden;
     }
     .hero.no-image { height: 80px; }
@@ -3187,7 +3187,7 @@ class RmRecipeDetail extends LitElement {
     .list-picker-existing { display: flex; flex-wrap: wrap; gap: 5px; }
     .list-picker-new-row { display: flex; gap: 6px; }
     .list-picker-input {
-      flex: 1; background: var(--rm-bg-surface, var(--rm-bg)); border: 1px solid var(--rm-border);
+      flex: 1; background: var(--rm-bg-surface, var(--rm-bg-main)); border: 1px solid var(--rm-border);
       border-radius: 7px; color: var(--rm-text); padding: 5px 9px; font-size: 13px;
       font-family: inherit; min-width: 0;
     }
