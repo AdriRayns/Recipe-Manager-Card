@@ -434,7 +434,7 @@ class RecipeManagerCard extends LitElement {
       setActiveLocale(resolved);
     }
     if (changedProps.has('hass') && this._api) this._api.hass = this.hass;
-    if (changedProps.has('_settings')) this._applyTheme();
+    if (changedProps.has('_settings') || changedProps.has('hass')) this._applyTheme();
     if (changedProps.has('_view') || changedProps.has('_selectedRecipe')) this._saveViewState();
   }
 
@@ -475,9 +475,9 @@ class RecipeManagerCard extends LitElement {
     const alwaysLight = !themeVars.dark;
     let isDark = alwaysDark;
     if (!alwaysDark && !alwaysLight) {
-      if (s.darkMode === 'on') isDark = true;
-      else if (s.darkMode === 'off') isDark = false;
-      else isDark = this._darkModeQuery?.matches ?? false;
+      // Follow the active Home Assistant theme; fall back to the OS
+      // preference until `hass` is attached on the very first render.
+      isDark = this.hass?.themes?.darkMode ?? (this._darkModeQuery?.matches ?? false);
     } else if (alwaysLight) {
       isDark = false;
     }
